@@ -1,14 +1,13 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/soomgu
-    username: soomgu
-    password: change_me
-    jpa:
-      hibernate:
-        ddl-auto: none         # 지금은 엔티티 없으니 스키마 생성 필요 없음
-      properties:
-        hibernate:
-          format_sql: true
+    url: jdbc:postgresql://localhost:5432/soomgu_dev
+    username: sungyoon        # 예: sungyoon
+    password: lsy12052781!
+  jpa:
+    hibernate:
+     ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
   application:
     name: soomgu
   profiles:
@@ -20,6 +19,12 @@ spring:
 
 server:
   port: 8080
+
+#지피티 4 내용부터ㄱ 다시 하기
+  kakao:
+    base-url: https://dapi.kakao.com
+    rest-api-key: ${KAKAO_REST_API_KEY} # 환경변수 설정값 참조함
+
 
 # 멤버 고정값(서비스에서 @Value로 주입)
 soomgu:
