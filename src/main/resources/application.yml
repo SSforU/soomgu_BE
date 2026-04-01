@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/soomgu_dev
+    username: sungyoon        # 예: sungyoon
+    password: lsy12052781!
+  jpa:
+    hibernate:
+     ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: soomgu
+  profiles:
+    active: dev   # 기본 실행 프로파일
+    # (터미널) PostgreSQL 접속 후
+  #  CREATE DATABASE soomgu;
+   # CREATE USER soomgu WITH ENCRYPTED PASSWORD 'change_me';
+    #GRANT ALL PRIVILEGES ON DATABASE soomgu TO soomgu;
+
+server:
+  port: 8080
+
+#지피티 4 내용부터ㄱ 다시 하기
+  kakao:
+    base-url: https://dapi.kakao.com
+    rest-api-key: ${KAKAO_REST_API_KEY} # 환경변수 설정값 참조함
+
+
+# 멤버 고정값(서비스에서 @Value로 주입)
+soomgu:
+  user:
+    id: 1
+    username: ssulion
+    email: ssulion@example.com
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO

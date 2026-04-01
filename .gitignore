@@ -1,0 +1,17 @@
+cat > .gitignore <<'EOF'
+# OS / Misc
+.DS_Store
+*.log
+
+# IntelliJ / IDEA
+.idea/
+*.iml
+out/
+
+# Gradle
+.gradle/
+build/
+
+# Java
+*.class
+EOF
